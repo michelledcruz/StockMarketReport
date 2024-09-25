@@ -1,3 +1,5 @@
+LIVE URL: https://main--stockmich.netlify.app/
+
 # React + Vite
 
 Following is the screenshot of the application:
