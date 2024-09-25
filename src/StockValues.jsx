@@ -17,6 +17,7 @@ const StockValues = () => {
                     throw new Error(`HTTP error! Status: ${res.status}`);
                 }
                 const data = await res.json();
+                console.log(data);
                 setStockData(data); // Set the fetched data in state
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -32,26 +33,24 @@ const StockValues = () => {
              <h2>Stock Values</h2>
         {stockData ? (
             <>
-            <h1>Meta Platforms Inc </h1>
+            <h1>{stockData.Name} </h1>
             <div className="data-cards">
-            <div className="stock-card">
-                {/* <h1>{stockData.Name}</h1>
-                <p>Analyst Target Price: {stockData.AnalystTargetPrice}</p> //Commented out as API LIMIT HAS REACHED*/} 
-                <p>Current Stock Price:</p>
-                <h3>$566.54</h3> 
-            </div>
-            <div className="stock-card">
-            <p>52 Week High:</p>
-            <h3>$599.54</h3> 
-            </div>
-            <div className="stock-card">
-            <p>52 Week Low:</p>
-            <h3>$516.14</h3> 
-            </div>
-            <div className="stock-card">
-            <p>Analyst Suggest</p>
-            <h3>Strong Buy</h3> 
-            </div>
+                <div className="stock-card">
+                    <p>Current Stock Price:</p>
+                    <h3>{stockData.AnalystTargetPrice}</h3> 
+                </div>
+                <div className="stock-card">
+                    <p>Dividend Per Share:</p>
+                    <h3>{stockData.DividendPerShare}</h3> 
+                </div>
+                <div className="stock-card">
+                    <p>Book Value:</p>
+                    <h3>{stockData.BookValue}</h3> 
+                </div>
+                <div className="stock-card">
+                    <p>Analyst Suggest</p>
+                    <h3>Strong Buy: {stockData.AnalystRatingStrongBuy}</h3> 
+                </div>
             </div>
             </>
         ) : (
