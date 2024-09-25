@@ -6,9 +6,10 @@ const StockValues = () => {
     const [stockData, setStockData] = useState(null);
 
     useEffect(() => {
-        const symbol = "IBM";
-        const apiKey = "6543AHCEBWX7Q80C";
-        const api_url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`;
+        // const symbol = "IBM";
+        // const apiKey = "6543AHCEBWX7Q80C";
+        // const api_url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=${apiKey}`;
+        const api_url = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo`;
 
         const fetchData = async () => {
             try {
@@ -17,7 +18,6 @@ const StockValues = () => {
                     throw new Error(`HTTP error! Status: ${res.status}`);
                 }
                 const data = await res.json();
-                console.log(data);
                 setStockData(data); // Set the fetched data in state
             } catch (error) {
                 console.error('Error fetching data:', error);
@@ -41,15 +41,15 @@ const StockValues = () => {
                 </div>
                 <div className="stock-card">
                     <p>Dividend Per Share:</p>
-                    <h3>{stockData.DividendPerShare}</h3> 
+                    <h3>{stockData.DividendPerShare}</h3>       
                 </div>
                 <div className="stock-card">
                     <p>Book Value:</p>
-                    <h3>{stockData.BookValue}</h3> 
+                    <h3>{stockData.BookValue}</h3>               
                 </div>
                 <div className="stock-card">
                     <p>Analyst Suggest</p>
-                    <h3>Strong Buy: {stockData.AnalystRatingStrongBuy}</h3> 
+                    <h3>{stockData.AnalystRatingStrongBuy}</h3>  
                 </div>
             </div>
             </>
