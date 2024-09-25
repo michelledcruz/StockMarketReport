@@ -1,4 +1,4 @@
-LIVE URL: https://main--stockmich.netlify.app/
+LIVE URL: https://stockmich.netlify.app/
 
 # React + Vite
 
