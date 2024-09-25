@@ -1,0 +1,77 @@
+html, body{
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  font-family: 'Poppins';font-size: 22px;
+}
+
+canvas {
+  background-color: #14142B;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Single column layout initially */
+  gap: 20px; /* Add some space between the elements */
+  width: 100vw;
+}
+
+.dataCard {
+  background-color: #14142B;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.dataCard h1 {
+  font-size: 36px;
+}
+.dataCard p{
+  font-size: 24px;
+  color: grey;
+}
+
+.dataCard h2 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #a0a0a0;
+}
+
+.dataCard p {
+  font-size: 16px;
+}
+
+.stockvalues p{
+  color: gray;
+  font-family: 'Poppins';
+}
+.stock-card{
+  background-color: #181837;
+  padding: 10px;
+  border-radius: 15px;
+}
+.data-cards{
+  display: grid;
+grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+
+}
+.stock-card h3{
+  margin: 5px;
+}
+/* For screens wider than 768px, create two columns for intraday and monthly cards */
+@media (max-width: 768px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 500px;
+  }
+}
+@media (min-width: 768px) {
+  .App {
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+    grid-template-rows: auto auto;
+    max-width: 1200px;
+  }
+}
